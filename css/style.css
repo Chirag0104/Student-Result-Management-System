@@ -1,0 +1,295 @@
+#home::before{
+    content: "";
+    position: absolute;
+    background: url('../images/index-background.jpg') no-repeat center center/cover; 
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    z-index:-1;
+}
+
+#home-heading h1{
+    /* font-weight: 750; */
+    font-size: 3.3rem;
+    font-family:sans-serif;
+    margin-top: 16rem;
+    margin-left:6rem;
+    color: white;
+}
+
+#home-content{
+    margin-left: 6rem;
+    font-size: 1.5rem;
+    padding:5px;
+    color: white    ;
+}
+
+#button-1{
+    width: 10%;
+    height: 45px;
+    margin-top: 20px;
+    margin-left: 6rem;
+    border: none;
+    background-color: rgb(20, 231, 231);
+    /* color: snow ; */
+    font-size: 1.2rem;
+    border-radius: 6px;
+}
+
+#button-2{
+    width: 10%;
+    height: 45px;
+    margin-top: 20px;
+    border: none;
+    margin-left: 10px;
+    background-color: rgb(248, 197, 12);
+    font-size: 1.2rem;
+    border-radius: 6px;
+    /* color: snow; */
+}
+
+#button-1:hover,#button-2:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+#student-form{
+    width: 50%;
+    border: 2px solid rgb(204, 200, 200);
+    box-shadow: 0px 6px 6px 3px gray;
+    background-color: rgb(236 230 230 / 52%);
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 130px;
+    font-family: sans-serif;
+}
+
+#student-heading{
+    justify-content: center;
+    margin-left: 150px;
+    border-bottom: 2px solid grey;
+    width: 47%;
+    margin-bottom: 30px;
+    color: rgb(27, 6, 75);
+    font-size: large;
+    padding-top: 20px;
+}
+
+#student-login-form{
+    margin-left: 150px;
+}
+
+#student-login-form i{
+    margin-left: -30px;
+    cursor: pointer;
+}
+
+#email{
+    width: 58%;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    height: 35px;
+    border: 1.8px solid rgb(20, 3, 61);
+    border-radius: 6px;
+}
+
+#password{
+    width: 58%;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    height: 35px;
+    border: 1.8px solid rgb(20, 3, 61);
+    border-radius: 6px;
+}
+
+#student-login-form label{
+    color: rgb(20, 3, 61);
+    font-weight:bold
+}
+
+#button{
+    height: 38px;
+    width: 95px;
+    border-radius: 6px;
+    margin-bottom: 40px;
+    background-color: rgb(60, 87, 240);
+    color: white;
+    font-size: 1rem;
+    border: none;
+}
+
+#button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    /* background-color:rgb(248, 197, 12) ; */
+}
+
+#student-form a{
+    text-decoration: none;
+    margin-left: 30px;
+}
+
+/* STUDENT SIGN-UP FORM */
+
+#signup-form-1{
+    width: 50%;
+    border: 2px solid rgb(204, 200, 200);
+    box-shadow: 0px 6px 6px 3px gray;
+    background-color: rgb(236 230 230 / 52%);
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 90px;
+    margin-bottom: 30px;
+    font-family: sans-serif;   
+    padding-bottom: 30px; 
+}
+
+#signup-heading-1{
+    margin-left: 5rem;
+    border-bottom: 2px solid grey;
+    width: 47%;
+    margin-bottom: 30px;
+    color: rgb(27, 6, 75);
+    font-size: large;
+    padding-top: 20px;
+}
+
+#form-section-signup{
+    margin-left: 5rem;
+    margin-top: 40px;
+}
+
+#name,#password-2,#email-2,#class,#rollno,#confirm_password{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    width: 50%;
+    height: 30px;
+}
+
+#student-signup-form label{
+    color: rgb(20, 3, 61);
+    font-weight:bold
+}
+
+#button-3{
+    height: 38px;
+    width: 100px;
+    border-radius: 6px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    background-color: rgb(60, 87, 240);
+    color: white;
+    font-size: 1rem;
+    border: none;
+}
+
+#button-3:hover{
+    cursor: pointer;
+}
+
+#form-section-signup a{
+    text-decoration:none;
+}
+
+#student-signup-form i {
+    margin-left: -30px;
+    cursor: pointer;
+}
+
+
+/* STUDENT LOGIN NAVBAR */
+
+#sidenav{
+    background-color:  #083966;
+    /* background-color: pink; */
+    left: 0;
+    top: 0;
+    position: fixed;
+    height: 100%;
+    width: 20%;
+    color: white;
+}
+
+#element li{
+    text-decoration: none;
+    list-style: none;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    display: inline-block;
+}
+
+#li-1{
+    margin-top: 20px;
+    font-size: 2rem;
+}
+
+#li-2{
+    margin-top: 50px;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+#li-3{
+    cursor: pointer;
+}
+
+#element i{
+    color: white;
+    margin-top: 450px;
+    margin-left: -30px;
+    font-size: 60px;
+}
+
+#li-4{
+    font-size:1.5rem;
+}
+
+#element ul a:visited{
+    color: white;
+}
+
+.fas{
+    color: white;
+    font-size:20px;
+    size: 30px;
+    text-decoration-color: white;
+}
+
+#student-information{
+    margin-left: 22%;
+    height: 710px
+    
+}
+
+#student-info{
+    font-size: 20px;
+    /* padding: 20px; */
+}
+
+#heading-homepage{
+    font-size: 1.5rem;
+    margin-top: 50px;
+}
+
+#student-info table td {
+    text-align: left;
+}
+
+#student-info table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#student-info table th{
+    font-size: 1.3rem;
+    text-align: left;
+    padding: 13px;
+}
+
+#student-info table tr {
+    height: 20px;
+    border-bottom: 1px solid rgb(207, 199, 199);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
