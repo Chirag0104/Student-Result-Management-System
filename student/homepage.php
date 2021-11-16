@@ -11,14 +11,28 @@
     
 </head>
 <body>
+
+
+<?php
+
+include '../db/conn.php';
+
+$id_2=$_GET['id'];
+
+$detail=$crud->student_info($id_2);
+
+$data=$detail->fetch(PDO::FETCH_ASSOC);
+
+
+?>
     <div id="sidenav">
         <div id="element">
             <!-- <nav id="navbar"> -->
                 <ul>
                     <!-- <i class="fas fa-bars"></i> -->
                     <li id="li-1">Menu</li><br>
-                    <a href="loginform.html"><li id="li-2">Your Profile</li></a><br>
-                    <li id="li-3">Your Result</li><br>
+                    <a href="homepage.php?id=<?php echo $data['S_No'];?>"><li id="li-2">Your Profile</li></a><br>
+                    <a href="result.html"><li id="li-3">Your Result</li></a><br>
                     <li id="li-4"><i class="fa fa-fw fa-user"></i>Chirag</li>
                 </ul>
             <!-- </nav> -->
@@ -33,27 +47,25 @@
             <table>
               <tr>
                 <th width="200">Student Name :</th>
-                <td>hello</td><br>
+                <td><?php echo $data['Name'];?></td><br>
               </tr>
                 <tr>
                 <th class="text-right" width="150">Email address :</th>
-                <!-- <td><?php echo $data['email'];?></td> --><br>
-                <td>hello</td>
+                <td><?php echo $data['Email'];?></td><br>
+                
               </tr>
+
+
                 <tr>
-                <th class="text-right" width="150">Password :</th>
-                <!-- <td><?php echo $data["password"];?></td> --><br>
-                <td>hello</td>
-              </tr>
-                <tr>
-                <th class="text-right" width="150">Class :</th>
-                <!-- <td><?php echo $data["classname"];?></td> --><br>
-                <td>hello</td>
-              </tr>
+                  <th class="text-right" width="150">Class :</th>
+                  <td><?php echo $data["Class"];?></td><br>
+                </tr>
+
+
                <tr>
                 <th class="text-right" width="150">Roll number :</th>
-                <!-- <td><?php echo $data["roll"];?></td> --><br>
-                <td>hello</td>
+                <td><?php echo $data["Roll_No"];?></td><br>
+                
               </tr>
 
                <tr>
@@ -64,6 +76,7 @@
         </div>                                                                                               
 
     </div>
+
 
 </body>
 </html>

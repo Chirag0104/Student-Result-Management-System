@@ -103,6 +103,8 @@
     border-radius: 6px;
 }
 
+
+
 #student-login-form label{
     color: rgb(20, 3, 61);
     font-weight:bold
@@ -117,12 +119,16 @@
     color: white;
     font-size: 1rem;
     border: none;
+    cursor: pointer;
 }
 
 #button:hover{
-    cursor: pointer;
     transform: scale(1.1);
     /* background-color:rgb(248, 197, 12) ; */
+}
+
+#button:disabled{
+    cursor: not-allowed;
 }
 
 #student-form a{
@@ -183,11 +189,18 @@
     color: white;
     font-size: 1rem;
     border: none;
-}
-
-#button-3:hover{
     cursor: pointer;
 }
+
+#button-3:disabled{
+    cursor:not-allowed;
+}
+
+
+/* #button-3:hover{
+    cursor: pointer;
+} */
+
 
 #form-section-signup a{
     text-decoration:none;
@@ -232,6 +245,7 @@
 
 #li-3{
     cursor: pointer;
+    color: white;
 }
 
 #element i{
@@ -243,6 +257,10 @@
 
 #li-4{
     font-size:1.5rem;
+}
+
+#element ul a{
+    color: white;
 }
 
 #element ul a:visited{
@@ -268,8 +286,9 @@
 }
 
 #heading-homepage{
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-top: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #student-info table td {
@@ -293,3 +312,48 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+#result-page table{
+    margin-left: 22%;
+    width: 78%;
+    /* border: 2px solid black; */
+    
+}
+
+#result-page table th{
+    font-size: 1.1rem;
+    width: 30%;
+    border-bottom: 2px solid rgb(196, 189, 189);
+    text-align: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-bottom: 10px;
+}
+
+#result-heading{
+    font-size: 1.1rem;
+    margin-top: 30px;
+    margin-left: 22%;
+    margin-bottom:100px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+
+/* #result-page table td{
+    width: 50%;
+} */
+
+
+#password-5{
+    width: 58%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    height: 35px;
+    border: 1.8px solid rgb(20, 3, 61);
+    border-radius: 6px;
+}
+
+.alert{
+    color: red;
+    font-size: large;
+    margin-top: -50px;
+    margin-bottom: 10px;
+}
