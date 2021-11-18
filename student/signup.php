@@ -57,7 +57,7 @@
                 <input id="button-3" type="submit" value="Submit" name="submit">
             </form>
             Already have an account ?
-            <a href="loginform.html">Login</a>
+            <a href="loginform.php">Login</a>
         </div>
     </div>
     <script>
