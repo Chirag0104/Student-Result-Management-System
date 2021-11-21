@@ -19,9 +19,10 @@ include '../db/conn.php';
 
 $id_2=$_GET['id'];
 
-$detail=$crud->student_info($id_2);
+$detail=$crud->student_info($id_2);        
 
 $data=$detail->fetch(PDO::FETCH_ASSOC);
+
 
 
 ?>
