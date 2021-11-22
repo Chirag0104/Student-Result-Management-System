@@ -22,8 +22,8 @@
             <ul>
                 <li><a href="dashboard.php">Home</a></li>
                 <li><a href="students.php">Students</a></li>
-                <li><a href="#">Classes</a></li>
-                <li><a href="#">Subjects</a></li>
+                <li><a href="class.php">Classes</a></li>
+                <li><a href="subject.php">Subjects</a></li>
                 <li><a href="loginform.php">Logout</a></li>
             </ul>
         </div>

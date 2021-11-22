@@ -26,7 +26,7 @@
                 <img src="../images/class.png" alt="">
             </div>
             <div id="content">
-                <a href="student.php">
+                <a href="class.php">
                 <span id="content-head">View all classes</span>
                 <span><i class="fa fa-arrow-circle-o-right fa-2x"></i></span>
                 </a>
@@ -37,7 +37,7 @@
                 <img src="../images/subject.png" alt="">
             </div>
             <div id="content">
-                <a href="student.php">
+                <a href="subject.php">
                 <span id="content-head">View all subject</span>
                 <span><i class="fa fa-arrow-circle-o-right fa-2x"></i></span>
                 </a>

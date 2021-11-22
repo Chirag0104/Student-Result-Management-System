@@ -45,7 +45,9 @@ $data=$detail->fetch(PDO::FETCH_ASSOC);
                </tr>
 </table>
         </div>   
-        
+        <div id="student-info-button">
         <a class="btn btn-primary" href="students.php">Back To Students List</a>
 
     </div>
+
+   

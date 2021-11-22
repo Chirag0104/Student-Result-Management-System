@@ -24,6 +24,7 @@
                      echo '<script type="text/javascript">';
                      echo ' alert("You have been successfully registered")';  // showing an alert box.
                      echo '</script>';
+
                  }
 
                 return True;
@@ -73,6 +74,28 @@
             $sql = "DELETE FROM `student_info` WHERE `S_No`='$id';";
             $result = $this->db->query($sql);
         }
+
+        public function class_count()
+        {
+            $sql = "SELECT DISTINCT(Class) FROM `student_info`;";
+            $result = $this->db->query($sql);
+
+            return $result;
+        }
+
+        public function student_count($class)
+        {
+            
+
+            $sql = "SELECT COUNT(Class) FROM `student_info` WHERE `Class`='$class';";
+            $student_count = $this->db->query($sql);
+
+            return $student_count;
+        }
+
+
+
+
 
     }
 
