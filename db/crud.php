@@ -94,7 +94,43 @@
         }
 
 
+        public function subject_data($SName,$Class){
+            try {
+                $sql = "INSERT INTO subject_info(Subject,Class) VALUES (:Name,:Class)";
+                $statement = $this->db->prepare($sql);
+                $statement->bindparam(':Name',$SName);
+                $statement->bindparam(':Class',$Class);
+                $statement->execute();
+                if($statement) 
+                {
+                     echo '<script type="text/javascript">';
+                     echo ' alert("Subject added successfully")';  // showing an alert box.
+                     echo '</script>';
 
+                 }
+
+                return True;
+
+            } catch (PDOException $e) {
+                echo $e->getMessage();
+                return false;
+            }
+        }
+
+        public function fetch_data()
+        {
+            # code...
+            $sql = "SELECT * FROM subject_info;";
+            $result = $this->db->query($sql);
+
+            return $result;
+        }
+
+        public function delete_subject($subject,$Class)
+        {
+            $sql = "DELETE FROM `subject_info` WHERE `Subject`='$subject' and `Class`='$Class';";
+            $result = $this->db->query($sql);
+        }
 
 
     }

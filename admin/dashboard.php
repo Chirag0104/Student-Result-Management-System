@@ -48,7 +48,7 @@
                 <img src="../images/exam.png" alt="">
             </div>
             <div id="content">
-                <a href="student.php">
+                <a href="exam_view.php">
                 <span id="content-head">View all exams</span>
                 <span><i class="fa fa-arrow-circle-o-right fa-2x"></i></span>
                 </a>
@@ -70,7 +70,7 @@
                 <img src="../images/result.png" alt="">
             </div>
             <div id="content">
-                <a href="student.php">
+                <a href="result_ungraded.php">
                 <span id="content-head">View all ungraded results</span>
                 <span><i class="fa fa-arrow-circle-o-right fa-2x"></i></span>
                 </a>
