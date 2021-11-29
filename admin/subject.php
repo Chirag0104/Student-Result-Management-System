@@ -1,34 +1,35 @@
 <?php
 
-
 include'includes/header.php';
 include '../db/conn.php';
 
-    session_start();
+session_start();
 
-    if(isset($_POST['submit'])){
-        $Random=$_POST['randcheck'];
-        if($Random==$_SESSION['rand']){
-        $SName=$_POST['subject'];
-        $Class=$_POST['class'];
-        $isSuccess = $crud->subject_data($SName,$Class);}}
+if(isset($_POST['submit'])){
+    $Random=$_POST['randcheck'];
+    if($Random==$_SESSION['rand']){
+    $SName=$_POST['subject'];
+    $Class=$_POST['class'];
+    $isSuccess = $crud->subject_data($SName,$Class);}}
 
-    $detail=$crud->fetch_data();
+$detail=$crud->fetch_data();
+
 ?>
 
 <br><br><br><br><br>
+
 <div class="container">
 	<div class="row">
-        	<div class="col-5">
-	<h1 class="text-center">All subjects</h1>
-	<br><br> 
-  <?php if(isset($_SESSION['suc'])){?>
+      <div class="col-5">
+	        <h1 class="text-center">All subjects</h1>
+	        <br><br> 
+          <?php if(isset($_SESSION['suc'])){?>
           <div class="alert alert-success mt-5">
-            <strong>Sucessfully deleted the subject</strong>
+              <strong>Sucessfully deleted the subject</strong>
           </div>
-           <?php }?>
+          
+          <?php }?>
 
-	
           <table class="table">
             <thead>
               
@@ -37,26 +38,29 @@ include '../db/conn.php';
               <th>Action</th>
              
             </thead>
+
             <tbody>
-            <?php 
+              <?php 
                  while($row=$detail->fetch(PDO::FETCH_ASSOC))
-                 {?>
+                 {
+              ?>
+
               <tr>
               	<td><?php echo $row['Class']; ?></td>
                 <td><?php echo $row['Subject']; ?></td>
-                 <td class="text-center">
-                   <a class="btn btn-danger mb-2" onclick="return confirm('Are you sure?')" href="delete-subject.php?subject=<?php echo $row['Subject']?>&class=<?php echo $row['Class'] ?>"><i class="fa fa-trash"></i> Delete  </a>
-                 </td>
-                
-
+                <td class="text-center">
+                  <a class="btn btn-danger mb-2" onclick="return confirm('Are you sure?')" href="delete-subject.php?subject=<?php echo $row['Subject']?>&class=<?php echo $row['Class'] ?>"><i class="fa fa-trash"></i> Delete  </a>
+                </td>
               </tr>
 
-                <?php  }
-                ?>
+              <?php  }
+              ?>
+
             </tbody>
           </table>
       </div>
-      <div class="col-2"></div>
+<div class="col-2"></div>
+
       <div class="col-5">
       	<h1>Add subjects</h1><br><br>
       	 <?php if(isset($_SESSION['success'])) { ?>
@@ -77,7 +81,7 @@ include '../db/conn.php';
             <div class="form-group">
               <label>Class :</label>
               <select name="class" class="form-control" required>
-              	<option value="select">Select a class</option>
+              	<option value="">Select a class</option>
               	<option value="1">1</option>
               	<option value="2">2</option>
               	<option value="3">3</option>
@@ -97,18 +101,14 @@ include '../db/conn.php';
       	</form>
       </div>
   </div>
-      </div>
+  </div>
 
-      <div id="class-button">   
-        
-        <a class="btn btn-primary " href="dashboard.php">Back To Dashboard</a>
-
-    </div>
-
-      
-  </body>
-  </html>
-
+<div id="class-button">   
+  <a class="btn btn-primary " href="dashboard.php">Back To Dashboard</a>
+</div>
+    
+</body>
+</html>
 
 <?php unset($_SESSION['success']); ?>
 <?php unset($_SESSION['suc']); ?>

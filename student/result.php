@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     
 </head>
 <body>
@@ -15,59 +16,37 @@
 <?php
 
 include '../db/conn.php';
-
 $id_2=$_GET['id'];
-
 $detail=$crud->student_info($id_2);
-
 $data=$detail->fetch(PDO::FETCH_ASSOC);
-
+include'includes/sidenav.php';
 
 ?>
-<div id="sidenav">
-        <div id="element">
-            <!-- <nav id="navbar"> -->
-                <ul>
-                    <!-- <i class="fas fa-bars"></i> -->
-                    <li id="li-1">Menu</li><br>
-                    <a href="homepage.php?id=<?php echo $data['S_No'];?>"><li id="li-2">Your Profile</li></a><br>
-                    <a href="result.php?id=<?php echo $data['S_No']; ?>"><li id="li-3">Your Result</li></a><br>
-                  </ul>
-                  
-                  <div id="li-4" class="dropup">
-                  <i class="fa fa-fw fa-user"></i>  
-                  <?php echo $data['Name']; ?>
-                  <!-- <i class="bi bi-arrow-up-circle-fill"></i> -->
-                  <!-- <i class="fas fa-arrow-circle-up"></i> -->
 
-                  <div class="dropup-info">
-                
-                        <a class="dropup-content" href="#">Privacy & policy</a><br>
-                         <a class="dropup-content" href="#">Help</a><br>
-                        <a class="dropup-content" href="#">Settings</a><br>
-                        <a class="dropup-content" href="homepage.php?id=<?php echo $data['S_No'];?>">Profile</a><br>
-                        <!-- <li>
-                            <hr class="dropdown-divider">
-                        </li> -->
-                        <a class="dropup-content" href="../index.php">Logout</a>
-                    </ul>
-                    </div>
-                    </div>
-            <!-- </nav> -->
-        </div>
+<div id="result-page">
+    <div id="result-heading">
+        <h1>Your Result</h1>
     </div>
-    <div id="result-page">
-        <div id="result-heading">
-            <h1>Your Result</h1>
-        </div>
-        <table>
-            <tr>
-                <th>Subject</th>
-                <th>Marks</th>
-                <th>Grade</th>
-            </tr>
-        </table>
-    </div>
+    <table>
+        <tr>
+            <th>Subject</th>
+            <th>Marks</th>
+        </tr>
+
+        <tr>
+            <?php
+            $Name=$data['Name'];
+            $Class=$data['Class'];
+            $row=$crud->fetch_result_2($Class,$Name);
+            while($data=$row->fetch(PDO::FETCH_ASSOC)){ ?>
+            <td><?php echo $data['Subject']; ?></td>
+            <td><?php echo $data['Marks']; ?></td>               
+        </tr>
+        <?php }
+        ?>
+    
+    </table>
+</div>
     
 </body>
 </html>

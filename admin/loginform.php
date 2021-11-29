@@ -25,19 +25,21 @@
                 <?php 
 
                     session_start();
-
                     if(isset($_SESSION['error'])) { ?>
                         <div class="alert">
                         Warning! Wrong email address and password.
                         </div>
-                    <?php } ?>
+                    <?php } 
+                ?>
                 <span id='message-3'></span><br><br>                                        
                 <input id="button" type="submit" value="Submit">
             </form>
         </div>
     </div>
-    <script>
-        // FUNCTION TO TOGGLE EYE BUTTON IN STUDENT LOGIN PAGE
+
+<script>
+
+// FUNCTION TO TOGGLE EYE BUTTON IN STUDENT LOGIN PAGE
 
 const togglePassword3 = document.querySelector('#togglePassword-3');
 const password3 = document.querySelector('#password');
@@ -72,7 +74,7 @@ var check = function() {
     
 }
 
-    </script>
+</script>
 </body>
 </html>
 

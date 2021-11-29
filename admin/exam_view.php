@@ -1,50 +1,37 @@
 <?php 
 
 include("includes/header.php");
- include("../db/conn.php");
-$sql="select exam.*,subject.name as subjectname,class.name as classname,students.name,students.roll,students.id as s_id
-from exam,subject,class,students
-where exam.sub_id=subject.id AND subject.c_id=class.id AND class.id=students.c_id;";
-$result=mysqli_query($conn,$sql);
-
+include("../db/conn.php");
 
 ?>
 
-<br><br><br><br><br>
-<div class="container">
-   <h1 class="text-center">All exams</h1>
-         <table class="table">
-           <thead>
-             <th>Exam ID</th>
-             <th>Class</th>
-             <th>Roll</th>
-             <th>Student name</th>
-             <th>Subject</th>
-             <th>Marks</th>
-             <th>Grade</th>
-             
-           </thead>
-           <tbody>
-             <?php 
-                while($row=mysqli_fetch_assoc($result))
-                {?>
-             <tr>
-                 <td><?php echo $row['id']?></td>
-               <td><?php echo $row['classname']?></td>
-               <td><?php echo $row['roll']?></td>
-               <td><?php echo $row['name']?></td>
-               <td><?php echo $row['subjectname']?></td>
-               <td><?php echo $row['marks']?></td>
-               <td><?php echo $row['grade']?></td>
-              
+<div id="declare-heading">
+  <h1>Declare Result</h1>
+</div>
 
-             </tr>
+<form action="result.php" method="POST" id="declare-result-form">
+           
+      <label for="class"><h5>Class :</h5></label>
+      <select name="class" class="form-control " id="classid" onchange='if(this.value != 0) { this.form.submit(); }'>
+        <option value="0">Select a Class</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+      </select>
+     
+</form>
 
-               <?php  }
-               ?>
-           </tbody>
-         </table>
-     </div>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
- </body>
- </html>
+
+
+
+
+

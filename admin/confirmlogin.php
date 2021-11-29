@@ -7,11 +7,8 @@ session_start();
 
 $email=$_POST['email'];
 $password=$_POST['password'];
-
 $detail=$crud->loginconfirm_admin($email,$password);
-
 $t=$detail->fetch(PDO::FETCH_ASSOC);
-
 $id_2=$t['S_No'];
 
    if($t>1)

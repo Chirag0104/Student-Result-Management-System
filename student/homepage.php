@@ -16,87 +16,54 @@
 <?php
 
 include '../db/conn.php';
-
 $id_2=$_GET['id'];
-
 $detail=$crud->student_info($id_2);        
-
 $data=$detail->fetch(PDO::FETCH_ASSOC);
 
-
+include'includes/sidenav.php';
 
 ?>
-    <div id="sidenav">
-        <div id="element">
-            <!-- <nav id="navbar"> -->
-                <ul>
-                    <!-- <i class="fas fa-bars"></i> -->
-                    <li id="li-1">Menu</li><br>
-                    <a href="homepage.php?id=<?php echo $data['S_No'];?>"><li id="li-2">Your Profile</li></a><br>
-                    <a href="result.php?id=<?php echo $data['S_No']; ?>"><li id="li-3">Your Result</li></a><br>
-                  </ul>
-                  
-                  <div id="li-4" class="dropup">
-                  <i class="fa fa-fw fa-user"></i>  
-                  <?php echo $data['Name']; ?>
-                  <!-- <i class="bi bi-arrow-up-circle-fill"></i> -->
-                  <!-- <i class="fas fa-arrow-circle-up"></i> -->
 
-                  <div class="dropup-info">
-                
-                        <a class="dropup-content" href="#">Privacy & policy</a><br>
-                         <a class="dropup-content" href="#">Help</a><br>
-                        <a class="dropup-content" href="#">Settings</a><br>
-                        <a class="dropup-content" href="homepage.php?id=<?php echo $data['S_No'];?>">Profile</a><br>
-                        <!-- <li>
-                            <hr class="dropdown-divider">
-                        </li> -->
-                        <a class="dropup-content" href="../index.php">Logout</a>
-                    </ul>
-                    </div>
-                    </div>
-            <!-- </nav> -->
-        </div>
+
+<div id="student-information-2" class="student-page">
+    <div id="heading-homepage">
+      <h1>Student individual information</h1>
     </div>
+    <div id="student-info">
+        <table>
+          <tr>
+            <th width="200">Student Name :</th>
+            <td><?php echo $data['Name'];?></td><br>
+          </tr>
+            <tr>
+            <th class="text-right" width="150">Email address :</th>
+            <td><?php echo $data['Email'];?></td><br> 
+          </tr>
+          <tr>
+            <th class="text-right" width="150">Class :</th>
+            <td><?php echo $data["Class"];  $Class=$data["Class"];?></td><br>
+          </tr>
+          <tr>
+            <th class="text-right" width="150">Roll number :</th>
+            <td><?php echo $data["Roll_No"];?></td><br>
+            
+          </tr>
 
-    <div id="student-information">
-        <div id="heading-homepage">
-            <h1>Student individual information</h1>
-        </div>
-        <div id="student-info">
-            <table>
-              <tr>
-                <th width="200">Student Name :</th>
-                <td><?php echo $data['Name'];?></td><br>
-              </tr>
-                <tr>
-                <th class="text-right" width="150">Email address :</th>
-                <td><?php echo $data['Email'];?></td><br>
-                
-              </tr>
-
-
-                <tr>
-                  <th class="text-right" width="150">Class :</th>
-                  <td><?php echo $data["Class"];?></td><br>
-                </tr>
-
-
-               <tr>
-                <th class="text-right" width="150">Roll number :</th>
-                <td><?php echo $data["Roll_No"];?></td><br>
-                
-              </tr>
-
-               <tr>
-                <th class="text-right" width="150">Subject :</th>
-                <td>hello</td>               
-               </tr>
-</table>
-        </div>                                                                                               
-
+          <th class="text-right" width="150"><div id="subject-heading-2">Subject :</div></th>
+              
+          <div id="subject-info-2">
+            <?php
+            $result=$crud->fetch_subject_2($Class);
+            while($data=$result->fetch(PDO::FETCH_ASSOC)){ ?>
+            <td id="subject-td"><?php echo $data['Subject']; ?></td> 
+          </div>             
+              
+              <?php }
+              ?>
+            
+          <!-- </div> -->
+        </table>
     </div>
-
-
+</div>                                                                                               
 </body>
 </html>

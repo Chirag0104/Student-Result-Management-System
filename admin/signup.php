@@ -7,10 +7,15 @@
     <title>Sign-Up</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 <?php
-      include '../db/conn.php';
+    include '../db/conn.php';
 
     session_start();
 
@@ -23,46 +28,46 @@
         $Email=$_POST['email-2'];
         $Password=$_POST['password'];
         $isSuccess = $crud->insert_data($Name,$Class,$Roll_No,$Email,$Password);}
-
     }
-  ?>
-      
-    <div id="signup-form-1">
-        <div id="signup-heading-1">
-            <h1>Sign Up</h1>
-        </div>
-        <div id="form-section-signup">
-            <form action="signup.php" method="POST" id="student-signup-form">
+?>
+<div id="class-button">   
+    <a class="btn btn-primary signup-button " href="../admin/dashboard.php">Back To Dashboard</a>
+</div>
+    
+<div id="signup-form-1">
+    <div id="signup-heading-1">
+        <h1>New Student</h1>
+    </div>
+    <div id="form-section-signup">
+        <form action="signup.php" method="POST" id="student-signup-form">
             <?php
                 $rand=rand();
                 $_SESSION['rand']=$rand;
             ?>
-                <label for="name">Full Name :</label><br>
-                <input type="name" id="name" name="name" placeholder="Enter your full Name" required><br>
-                <input type="hidden" value="<?php echo $rand; ?>" name='randcheck' />
-                <label for="class">Class :</label><br>
-                <input type="number"  id="class" name="class" placeholder="Enter your Class" required max="12"><br>
-                <label for="Roll Number">Roll Number</label><br>
-                <input type="number" id="rollno" name="rollno" placeholder="Enter your Roll Number" required><br>
-                <label for="email">Email :</label><br>
-                <input type="email" id="email-2" name="email-2" placeholder="Email address" required><br>
-                <label for="password">Password :<br></label>
-                <input type="password" id="password-2" name="password" placeholder="Type a password" required="" onkeyup='check();' onkeyup='check();' />
-                <i class="bi bi-eye-slash" id="togglePassword"></i><br>
-                <label for="password">Confirm Password :<br></label>
-                <input type="password" id="confirm_password" name="confirm_password" placeholder="Re-type your password" required onkeyup='check();' />
-                <i class="bi bi-eye-slash" id="togglePassword-2"></i>
-                <span id='message'></span><br>
-                <span id='message-2'></span><br>
-                <input id="button-3" type="submit" value="Submit" name="submit">
-            </form>
-            Already have an account ?
-            <a href="loginform.php">Login</a>
-        </div>
+            <label for="name">Full Name :</label><br>
+            <input type="name" id="name" name="name" placeholder="Enter your full Name" required><br>
+            <input type="hidden" value="<?php echo $rand; ?>" name='randcheck' />
+            <label for="class">Class :</label><br>
+            <input type="number"  id="class" name="class" placeholder="Enter your Class" required max="12"><br>
+            <label for="Roll Number">Roll Number</label><br>
+            <input type="number" id="rollno" name="rollno" placeholder="Enter your Roll Number" required><br>
+            <label for="email">Email :</label><br>
+            <input type="email" id="email-2" name="email-2" placeholder="Email address" required><br>
+            <label for="password">Password :<br></label><br>
+            <input type="password" id="password-2" name="password" placeholder="Type a password" required="" onkeyup='check();' onkeyup='check();' />
+            <i class="bi bi-eye-slash" id="togglePassword"></i><br>
+            <label for="password">Confirm Password :<br></label><br>
+            <input type="password" id="confirm_password" name="confirm_password" placeholder="Re-type your password" required onkeyup='check();' />
+            <i class="bi bi-eye-slash" id="togglePassword-2"></i>
+            <span id='message'></span><br>
+            <span id='message-2'></span><br>
+            <input id="button-3" type="submit" value="Submit" name="submit">
+        </form>
     </div>
-    <script>
+</div>
 
-     
+
+<script>     
 
 // FUNCTION TO TOGGLE EYE BUTTON IN STUDENT SIGNUP PAGE
 
@@ -120,6 +125,6 @@ var check = function() {
 }
 
 
-    </script>   
+</script>   
 </body>
 </html>
